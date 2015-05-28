@@ -1,0 +1,19 @@
+
+<div id='single_vid'>
+<iframe id='large'  src='<%= @video['video'] %>'></iframe>
+<div>
+
+<form action="/comments" method="post" id="comment">
+  <input type="text" name="comment" id="item" placeholder="insert comment here">
+  <button>Add Comment</button>
+</form>
+
+<% @comments.each do |comment| %>
+
+    
+  <h5><%= comment['username']%></h5>
+
+  <h2><%= comment['content']%></h2>
+
+   <p><%= comment['video_id']%></p>
+<% end %>
